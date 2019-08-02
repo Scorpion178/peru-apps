@@ -1,1 +1,114 @@
-<p>usereditar works!</p>
+<app-header></app-header>
+<section class="container-general">
+  <div class="content-general doc-container full-width">
+    <div class="doc-head">
+      <h2>NUEVO USUARIO</h2>
+    </div>
+    <div class="doc-form full-width">
+        <form
+        [formGroup]="addEditUserForm"
+        #formNewUser="ngForm"
+        (ngSubmit)="saveUsuario(formNewUser)"
+        novalidate>
+            <mat-card>
+                <div class="container-form row">
+                    <div class="content-itemform col-md-6">
+                        <mat-form-field 
+                            [hideRequiredMarker]="false"
+                            [floatLabel]="'auto'" 
+                            class="full-width">
+                            <input 
+                            matInput 
+                            placeholder="Nombre"
+                            formControlName="nombre"
+                            [type]="'text'"
+                            required>
+                            <mat-error *ngIf="addEditUserForm.controls['nombre'].hasError('required')">
+                                Nombre es <strong>requerido.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="content-itemform col-md-6"></div>
+                    <div class="content-itemform col-md-6">
+                        <mat-form-field 
+                            [hideRequiredMarker]="false" 
+                            [floatLabel]="'auto'" 
+                            class="full-width">
+                            <input 
+                            matInput
+                            placeholder="Apellido Paterno"
+                            formControlName="apellidopat"
+                            [type]="'text'"
+                            required>
+                            <mat-error *ngIf="addEditUserForm.controls['apellidopat'].hasError('required')">
+                                Apellido Paterno es <strong>requerido.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="content-itemform col-md-6">
+                        <mat-form-field 
+                            [hideRequiredMarker]="false" 
+                            [floatLabel]="'auto'" 
+                            class="full-width">
+                            <input 
+                            matInput
+                            placeholder="Apellido Materno"
+                            formControlName="apellidomat"
+                            [type]="'text'"
+                            required>
+                            <mat-error *ngIf="addEditUserForm.controls['apellidomat'].hasError('required')">
+                                Apellido Materno es <strong>requerido.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="content-itemform col-md-6">
+                        <mat-form-field 
+                            [hideRequiredMarker]="false" 
+                            [floatLabel]="'auto'" 
+                            class="full-width">
+                            <input 
+                            matInput
+                            placeholder="Correo Electronico"
+                            formControlName="email"
+                            [type]="'text'"
+                            required>
+                            <mat-error *ngIf="addEditUserForm.controls['email'].hasError('pattern')">
+                            Por favor, introduce un <strong>Correo Electronico válido.</strong>
+                            </mat-error>
+                            <mat-error *ngIf="addEditUserForm.controls['email'].hasError('required')">
+                                Correo Electronico es <strong>requerido.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="content-itemform col-md-6">
+                        <mat-form-field
+                            [hideRequiredMarker]="false"
+                            class="full-width">
+                            <input 
+                                matInput
+                                [max]="maxDate"
+                                [matDatepicker]="picker" 
+                                placeholder="Fecha Nacimiento" 
+                                formControlName="fchnac" 
+                                id="fchnac"
+                                (click)="picker.open()"
+                                readonly
+                                required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker startView="year"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+        
+                    <div class="content-btns col-md-12">
+                        <button mat-raised-button type="button" [routerLink]="['/usuarios']"><b>CANCELAR</b></button>
+                        <button mat-raised-button type="button" (click)="resetForm(formNewUser)"><b>RESET</b></button>
+                        <button mat-raised-button type="submit" color="primary"><b>GUARDAR</b></button>
+                    </div>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+  </div>
+</section>
+
+<app-loadingfull [active]="activeloadingfull"></app-loadingfull>

@@ -1,0 +1,58 @@
+@import '../../../sass/sass.scss';
+
+.doc-container{
+    .doc-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 0 20px 0;
+        h2{
+            color: $wlib-primary-text;
+            @include fontsizeheight(18px,1,18px,1,18px,1);
+            font-weight: bold;
+        }
+        button{
+            &:focus{
+                outline-color: rgb(255, 255, 255);
+                outline-style: none;
+                outline-width: 0px;
+            }
+        }
+    }
+
+    .doc-table{
+        margin-bottom: 30px;
+        .doc-headtable{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            h3{
+                color: $wlib-primary-text;
+                @include fontsizeheight(14px,1,14px,1,14px,1);
+            }
+            .doc-right{
+                display: flex;
+                flex-direction: column;
+                p{
+                    color: $wlib-primary-text;
+                    @include fontsizeheight(14px,1,14px,1,14px,1);
+                }
+            }
+        }
+        .doc-bodytable{
+            .content-options{
+                button{
+                    margin-right: 5px;
+                }
+            }
+        }
+        .doc-loadtable{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 34px 0 10px 0;
+        }
+    }
+}

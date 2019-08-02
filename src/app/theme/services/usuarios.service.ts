@@ -3,6 +3,7 @@ import { HttpClienteService } from './api/http-cliente.service';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,14 +37,12 @@ export class UsuariosService {
       // const formData = new FormData();
 
       let data = JSON.stringify({
-          codigo: obj.codigo,
-          nombres: obj.nombres,
-          apellidos: obj.apellidos,
-          email: obj.email,
-          password: obj.password,
-          url_foto: obj.url_foto,
-          estado: obj.estado,
-          id_rol: obj.id_rol
+        nombre: obj.nombre,
+        apellidopat: obj.apellidopat,
+        apellidomat: obj.apellidomat,
+        email: obj.email,
+        fchnac: obj.fchnac,
+        fchingreso: obj.fchingreso
       });
       return this.http.post(query, data);
   }
@@ -53,14 +52,12 @@ export class UsuariosService {
       let query: string = `${this.url}/api/users/${id}`;
 
       let data = JSON.stringify({
-          codigo: obj.codigo,
-          nombres: obj.nombres,
-          apellidos: obj.apellidos,
-          email: obj.email,
-          password: obj.password,
-          url_foto: obj.url_foto,
-          estado: obj.estado,
-          id_rol: obj.id_rol
+        nombre: obj.nombre,
+        apellidopat: obj.apellidopat,
+        apellidomat: obj.apellidomat,
+        email: obj.email,
+        fchnac: obj.fchnac,
+        fchtermino: obj.fchtermino
       });
       return this.http.put(query, data);
   }

@@ -1,0 +1,16 @@
+mat-toolbar-row{
+    display: flex;
+    justify-content: space-between;
+}
+.content-svg{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .icono-peru{
+        height: 80%;
+    }
+    .texto-peru{
+        height: 35%;
+        margin-left: 10px;
+    }
+}

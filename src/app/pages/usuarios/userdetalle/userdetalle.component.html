@@ -1,0 +1,18 @@
+<app-header></app-header>
+<section class="container-general">
+  <div class="content-general doc-container full-width">
+    <div class="doc-head">
+      <h2>{{ miUser.first_name }} {{ miUser.last_name }}</h2>
+    </div>
+    <div class="doc-info full-width">
+        <div class="content-image">
+            <img [src]="miUser.avatar | imagedefault" alt="">
+        </div>
+        <div class="content-atras">
+            <button mat-raised-button color="warn" [routerLink]="['/usuarios']">Regresar</button>
+        </div>
+    </div>
+  </div>
+</section>
+
+<app-loadingfull [active]="activeloadingfull"></app-loadingfull>

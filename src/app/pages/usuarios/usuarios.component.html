@@ -1,1 +1,67 @@
-<p>usuarios works!</p>
+<app-header></app-header>
+<section class="container-general">
+    <div class="content-general doc-container">
+        <div class="doc-head">
+            <h2>USUARIOS</h2>
+            <button mat-raised-button color="primary" [routerLink]="['/usuarios/nuevo']">Nuevo Usuario</button>
+        </div>
+
+        <div class="doc-table">
+            <mat-card>
+        
+                <div class="doc-headtable">
+                <h3>Los resultados son:</h3>
+                <div class="doc-right">
+                    <mat-paginator #paginator [pageSize]="tableconfig.per_page" [length]="tableconfig.total">
+                    </mat-paginator>
+                </div>
+                </div>
+                <mat-divider></mat-divider>
+        
+                <div *ngIf="loadtable; then spiner else usertable" class="doc-loadtable"></div>
+                <ng-template #spiner>
+                    <mat-progress-spinner
+                    [color]="'primary'"
+                    [mode]="'indeterminate'"
+                    [value]="50">
+                </mat-progress-spinner>
+                </ng-template>
+                <ng-template #usertable>
+                <mat-table #table [dataSource]="dataSource" class="doc-bodytable">
+        
+                    <!-- Id Column -->
+                    <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+                    </ng-container>
+        
+                    <!-- Nombres Column -->
+                    <ng-container matColumnDef="nombres">
+                    <mat-header-cell *matHeaderCellDef> Nombres </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{ element.first_name }} {{ element.last_name }}</mat-cell>
+                    </ng-container>
+        
+        
+                    <!-- Opciones Column -->
+                    <ng-container matColumnDef="opciones">
+                    <mat-header-cell *matHeaderCellDef> Acción </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <div class="content-options">
+                            <button mat-raised-button color="primary" [routerLink]="['/usuarios/editar',element.id]">Editar</button>
+                            <button mat-raised-button color="accent" [routerLink]="['/usuarios/detalle',element.id]">Detalles</button>
+                            <button mat-raised-button color="warn">Eliminar</button>
+                        </div>
+                    </mat-cell>
+                    </ng-container>
+        
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let element; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                </ng-template>
+                
+            </mat-card>
+        </div>
+    </div>
+</section>
+
+<app-loadingfull [active]="activeloadingfull"></app-loadingfull>

@@ -1,3 +1,4 @@
+@import '~@angular/material/theming';
 /**************** RESPONSIVE *********************/
 
 
@@ -70,3 +71,23 @@ $light-icon-inactive    : rgba(255, 255, 255, 0.50);
 $font-Roboto: 'Roboto', sans-serif;
 $font-Open: 'Open Sans', sans-serif;
 
+// Estas variables dependen de la importacion de angular material
+$wlib-primary          : map-get($mat-deep-orange, 700); // naranja
+$wlib-primary-light    : map-get($mat-deep-orange, 500);
+$wlib-primary-dark     : map-get($mat-deep-orange, 900);
+$wlib-accent           : map-get($mat-amber, A200); // amarillo
+$wlib-warm             : map-get($mat-red, 500); // rojo
+$wlib-success          : map-get($mat-green, 500); // verde
+$wlib-disabled         : map-get($mat-deep-orange, 100); // naranja decolorado
+
+$wlib-primary-text      : $light-primary-text; // negro
+$wlib-secundary-text    : $light-secundary-text; // gris
+$wlib-title-text        : $dark-primary-text; // blanco
+
+$wlib-divider           : $light-divider;
+$wlib-icon              : $light-icon-active; // blanco
+
+$wlib-background-white  : #ffffff;
+$wlib-background-gris   : #ecf0f5;
+
+$wlib-sombra-bottom     : 0 2px 5px rgba(0,0,0,.26);

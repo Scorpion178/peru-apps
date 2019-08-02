@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ImagedefaultPipe implements PipeTransform {
     /*  Examples
     *   --> defautlimage:tipo de imagen default:carga o no:string de filtro que debe tener la url al inicio
-    *   <img [src]="empresa.urlImage | defautlimage" alt="">
+    *   <img [src]="empresa.urlImage | imagedefault" alt="">
     */
 
     imgdefault: string = '';

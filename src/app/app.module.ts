@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /****** Modules ******/
 // import { InterceptorModule } from './theme/services/api/interceptor.module';
 
-/****** ng-Bootstrap ******/
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+/****** Material Angular ******/
 
 
 /****** Routes ******/
@@ -28,19 +28,17 @@ import { environment } from '../environments/environment';
 
 /****** Componentes ******/
 import { AppComponent } from './app.component';
-import { ImagedefaultPipe } from './theme/pipe/imagedefault.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ImagedefaultPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgbModule
+    HttpClientModule
   ],
   providers: [
     HttpClienteService,

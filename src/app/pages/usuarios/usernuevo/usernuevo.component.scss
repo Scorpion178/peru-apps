@@ -1,0 +1,46 @@
+@import '../../../../sass/sass.scss';
+
+.doc-container{
+    .doc-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 0 20px 0;
+        h2{
+            color: $wlib-primary-text;
+            @include fontsizeheight(18px,1,18px,1,18px,1);
+            font-weight: bold;
+        }
+    }
+    .doc-form{
+        margin-bottom: 30px;
+        .container-form{
+            display: flex;
+            .content-itemform{
+                padding: 0 10px 0 10px;
+                &.wlib-formimage{
+                    margin: 10px 0 10px 0;
+                }
+                &.content-flex{
+                    display: flex;
+                    margin-top: 10px;
+                    .width-label-80{
+                        width: 80px;
+                    }
+                    .radio-vertical{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+            .content-btns{
+                padding: 30px 0 20px 0;
+                display: flex;
+                justify-content: center;
+                button{
+                    margin: 0 10px 0 10px;
+                }
+            }
+        }
+    }
+}
